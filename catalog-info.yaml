@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: plcnvf5na-python-gitops
+  description: This is GitOps manifest for plcnvf5na-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: plcnvf5na-python
+    janus-idp.io/tekton: plcnvf5na-python 
+    backstage.io/kubernetes-id: plcnvf5na-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:plcnvf5na-python
